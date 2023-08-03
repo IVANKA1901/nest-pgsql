@@ -35,4 +35,18 @@ export class UserService {
       },
     });
   }
+
+  async updateUser(
+    data: Prisma.UserUpdateInput,
+    userId: string,
+  ): Promise<User> {
+    return await this.prismaService.user.update({
+      where: { id: Number(userId) },
+      data: {
+        username: data.username,
+        age: data.age,
+        status: data.status,
+      },
+    });
+  }
 }
