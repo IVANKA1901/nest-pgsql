@@ -6,12 +6,12 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  id         String   @default(autoincrement()) @id
   username   String
   email      String
   age        Int
