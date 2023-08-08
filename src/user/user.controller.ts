@@ -28,7 +28,7 @@ export class UserController {
     description: 'All users are successfully loaded',
   })
   @ApiBadRequestResponse()
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   async getAllUsers() {
     return await this.userService.getAll();
   }
@@ -61,7 +61,7 @@ export class UserController {
     exampleData: SWAGGER_EXAMPLE_USER_DELETE,
     description: 'User is successfully deleted',
   })
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   async deleteUser(@Param('id') id: string) {
     return await this.userService.deleteUser(id);
   }
